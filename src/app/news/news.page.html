@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>news</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>News</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">News</ion-title>
+    </ion-toolbar>
+	</ion-header>
+	<IonList>
+		<IonItem *ngFor="let n of news">
+			<ion-card>
+				<img src="{{ n.img }}" />
+				<ion-card-header>
+					<ion-card-subtitle>{{ n.subtitle }}</ion-card-subtitle>
+					<ion-card-title>{{ n.title }}</ion-card-title>
+				</ion-card-header>
+				<ion-card-content>
+					{{ n.description }}
+				</ion-card-content>
+				<ion-button class="btn-see-more" size="small" color="primary"><ion-icon name="arrow-redo-outline"></ion-icon></ion-button>
+			</ion-card>
+		</IonItem>
+	</IonList>
 </ion-content>
